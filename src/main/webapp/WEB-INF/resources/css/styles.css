@@ -1,0 +1,28 @@
+#footer{
+    float: left;
+    display: block;
+    text-align: center;
+    width: 100%;
+    border: 1px solid black;
+}
+#logout{
+    float: right;
+    display: block;
+    text-align:right;
+    width: 50%;
+}
+#main{
+    float: left;
+    width: 100%;
+    display: block;
+}
+#path{
+    float: left;
+    display: block;
+    width: 50%;
+}
+#container{
+}
+#search_div{
+    margin-top: 10px;
+}
