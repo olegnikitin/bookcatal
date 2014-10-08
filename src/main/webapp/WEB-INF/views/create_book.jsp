@@ -53,7 +53,12 @@
             </tr>
             <tr>
                 <td>Автор(ы)</td>
-                <td>Список авторов</td>
+                <td>
+                    <select multiple="true">
+                        <option>Пункт 1</option>
+                        <option>Пункт 2</option>
+                    </select>
+                </td>
             </tr>
         </table>
     </form:form>

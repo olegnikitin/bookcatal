@@ -40,7 +40,7 @@ public class ListOfBooksController {
     //TODO:Write the method below and the request to DB
     @RequestMapping("books_of_author?searched_book_name={name}")
     public String searchBook(@PathVariable("name") String name){
-        bookService.getBookByName(name);
+        bookService.getBooksByName(name);
         return "books_of_author?=" + name;
     }
 }

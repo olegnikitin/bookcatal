@@ -11,7 +11,7 @@ import java.util.List;
 public interface BookService {
     public void addBook(Book book);//#5
     public Book getBookByID(Integer id);
-    public Book getBookByName(String nameOfBook);//#4
+    public List getBooksByName(String nameOfBook);//#4
     //public List<Book> getBooksByAuthor(Author author);//#3
     public List<Book> listOfBook();//#1
     public void removeBook(Integer id);//#9

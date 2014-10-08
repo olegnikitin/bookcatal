@@ -8,6 +8,8 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import java.util.List;
+
 /**
  * Created by яна on 04.10.14.
  */
@@ -16,7 +18,7 @@ public class SearchBooksByNameController {
 
     @Autowired
     private BookService bookService;
-    private Book book;//get data and set in fields
+    private List books;//get data and set in fields
 
     @RequestMapping("books_of_author")
     public String goToBooksOfAuthorPage(){
@@ -25,8 +27,8 @@ public class SearchBooksByNameController {
 
     @RequestMapping("searched_book_name={name}")
     public String searchByNameMethod(@PathVariable("name") String name, Model model){
-        book = bookService.getBookByName(name);
-        model.addAttribute(book);
+        books = bookService.getBooksByName(name);
+        model.addAttribute(books);
         return "searched_book_name=" + name;
     }
 }
