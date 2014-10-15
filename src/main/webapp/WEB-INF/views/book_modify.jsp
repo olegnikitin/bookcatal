@@ -19,22 +19,22 @@
 <div id="container">
     <div id="path">
         <a href="main_page">Главная</a> >
-        <a href="list_of_authors">Список авторов</a> >
-        Модификация автора
+        <a href="list_of_books">Список книг</a> >
+        Модификация книги
     </div>
     <div id="logout"><a href="/">Logout</a></div>
 </div>
 <div id="main">
-    <form action="modify_book_method" method="post">
+    <form:form method="post" modelAttribute="book">
         <h2>Заполните необходимые значения и нажмите кнопку</h2>
-        <input type="submit" id="create_book_button" value="Применить"><br>
+        <input type="submit" value="Применить"><br>
         <table>
             <tr>
                 <td>
                     Название
                 </td>
                 <td>
-                    <input type="text" name="name_book" size="25">
+                    <form:input path="nameOfBook" />
                 </td>
             </tr>
             <tr>
@@ -42,13 +42,13 @@
                     Краткое описание
                 </td>
                 <td>
-                    <input type="text" name="name_book" size="25">
+                    <form:input path="shortDescription" />
                 </td>
             </tr>
             <tr>
                 <td>Год издания</td>
                 <td>
-                    <input type="text" name="name_book" size="25">
+                    <form:input path="yearOfPublishing" size="4" />
                 </td>
             </tr>
             <tr>
@@ -56,7 +56,7 @@
                 <td>Список авторов</td>
             </tr>
         </table>
-        </form>
+        </form:form>
 </div>
 </body>
 </html>

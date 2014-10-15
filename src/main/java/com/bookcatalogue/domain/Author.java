@@ -4,11 +4,10 @@ import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 import java.io.Serializable;
 import java.util.HashSet;
-import java.util.List;
 import java.util.Set;
 
 /**
- * Created by яна on 25.09.14.
+ * Created by Oleg Nikitin on 25.09.14.
  */
 @Entity
 @Table(name = "AUTHORS")
@@ -28,11 +27,19 @@ public class Author implements Serializable{
     @NotNull
     private String lastName;
 
-    @ManyToMany
+    @ManyToMany//set cascade for deleting all books
     @JoinTable(name = "BOOKS_AUTHORS", joinColumns = @JoinColumn(name = "AUTHOR_ID"), inverseJoinColumns = @JoinColumn(name = "BOOK_ID"))
     private Set<Book> books = new HashSet<>();
 
     public Author() {    }
+
+    public Integer getId() {
+        return id;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
+    }
 
     public String getFirstName() {
         return firstName;
@@ -48,14 +55,6 @@ public class Author implements Serializable{
 
     public void setLastName(String lastName) {
         this.lastName = lastName;
-    }
-
-    public Integer getId() {
-        return id;
-    }
-
-    public void setId(Integer id) {
-        this.id = id;
     }
 
     public Set<Book> getBooks() {

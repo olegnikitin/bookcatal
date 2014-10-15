@@ -17,24 +17,25 @@ import java.util.Map;
  * Created by яна on 02.10.14.
  */
 @Controller
+@RequestMapping("/create_author")
 public class AuthorCreateController {
 
     @Autowired
     AuthorService authorService;
 
-    @RequestMapping("/create_author")
+    @RequestMapping(method = RequestMethod.GET)
     public String goToCreateAuthorPage(Model model){
         model.addAttribute(new Author());
         return "create_author";
     }
 
     //TODO: write this method
-    @RequestMapping(value = "createAuthorMethod", method = RequestMethod.POST)
+    @RequestMapping(method = RequestMethod.POST)
     public String createAuthorMethod(Author author, BindingResult bindingResult){
         if(bindingResult.hasErrors()){
             return "create_author" + "?has_errors"; //TODO: реализовать проверку
         }
         authorService.addAuthor(author);
-        return "create_author";
+        return "redirect:/create_author";
     }
 }

@@ -25,7 +25,7 @@
     <div id="logout"><a href="/">Logout</a></div>
 </div>
 <div id="main">
-    <form:form method="post" modelAttribute="author" action="createAuthorMethod">
+    <form:form method="post" modelAttribute="author">
         <h2>Заполните необходимые значения и нажмите кнопку</h2> <input type="submit" name="create_button" value="Применить"><br>
         <table>
             <tr>

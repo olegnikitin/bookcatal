@@ -8,7 +8,7 @@ import java.util.List;
 import java.util.Set;
 
 /**
- * Created by яна on 25.09.14.
+ * Created by Oleg Nikitin on 25.09.14.
  */
 @Entity
 @Table(name = "BOOKS")

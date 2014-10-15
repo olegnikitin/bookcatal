@@ -24,7 +24,7 @@ public class BookCreateController {
         return "create_book";
     }
 
-    @RequestMapping(value = "/create_book", method = RequestMethod.POST)
+    @RequestMapping(value = "createBookMethod", method = RequestMethod.POST)
     public String createBookMethod(Book book, BindingResult bindingResult){
         if(bindingResult.hasErrors()){
             return "create_book" + "?has_errors"; //TODO: реализовать проверку

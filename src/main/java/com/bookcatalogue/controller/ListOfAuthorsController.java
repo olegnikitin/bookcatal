@@ -27,9 +27,8 @@ public class ListOfAuthorsController {
         return "list_of_authors";
     }
 
-    @RequestMapping("/books_of_author={id}")
+    @RequestMapping("/books_of_author={id}")// TODO: remove this method and create controller for them
     public String authorsListOfBooks(@PathVariable("id") Integer authorId){
-        //TODO: GET запрос нужен ли?
         return "books_of_author?id=" + authorId;
     }
 

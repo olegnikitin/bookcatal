@@ -34,7 +34,7 @@
         <tr>
             <td>${author.lastName}</td>
             <td>${author.firstName}</td>
-            <td><a href="update_author=${author.id}">Модифицировать</a>
+            <td><a href="author_modify=${author.id}">Модифицировать</a>
                 <a href="delete_author=${author.id}">Удалить</a>
                 <a href="books_of_author=${author.id}">Список книг</a>
             </td>

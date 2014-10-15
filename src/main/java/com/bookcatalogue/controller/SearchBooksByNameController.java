@@ -1,6 +1,5 @@
 package com.bookcatalogue.controller;
 
-import com.bookcatalogue.domain.Book;
 import com.bookcatalogue.service.book.BookService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
