@@ -28,8 +28,10 @@ public class Author implements Serializable{
     @NotNull
     private String lastName;
 
-    @ManyToMany
-    @JoinTable(name = "BOOKS_AUTHORS", joinColumns = @JoinColumn(name = "AUTHOR_ID"), inverseJoinColumns = @JoinColumn(name = "BOOK_ID"))
+    @ManyToMany(fetch = FetchType.LAZY, mappedBy = "BOOKS")
+    @JoinTable(name = "BOOKS_AUTHORS",
+            joinColumns = @JoinColumn(name = "AUTHOR_ID", referencedColumnName="ID"),
+            inverseJoinColumns = @JoinColumn(name = "BOOK_ID", referencedColumnName="ID"))
     private Set<Book> books = new HashSet<>();
 
     public Author() {    }

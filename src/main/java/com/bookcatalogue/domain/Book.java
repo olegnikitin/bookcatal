@@ -33,8 +33,7 @@ public class Book implements Serializable{
     @NotNull
     private Integer yearOfPublishing;
 
-    @ManyToMany
-    @JoinTable(name = "BOOKS_AUTHORS", joinColumns = @JoinColumn(name = "BOOK_ID"), inverseJoinColumns = @JoinColumn(name = "AUTHOR_ID"))
+    @ManyToMany(fetch = FetchType.EAGER, mappedBy = "BOOKS")
     private Set<Author> authors = new HashSet<>();
 
     public Book() {    }
