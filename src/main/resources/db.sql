@@ -18,3 +18,9 @@ create table BOOKS_AUTHORS (
 	constraint BOOKS_AUTHORS_BOOKS foreign key (BOOK_ID) references BOOKS (ID),
 	constraint BOOKS_AUTHORS_AUTHORS foreign key (AUTHOR_ID) references AUTHORS (ID)
 );
+
+create table USERS (
+	LOGIN varchar(70) not null,
+	PASSWORD varchar(70) not null,
+	ROLE varchar(20) not null
+);

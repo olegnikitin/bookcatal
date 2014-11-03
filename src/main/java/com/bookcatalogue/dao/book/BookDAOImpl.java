@@ -1,6 +1,5 @@
 package com.bookcatalogue.dao.book;
 
-import com.bookcatalogue.domain.Author;
 import com.bookcatalogue.domain.Book;
 import org.hibernate.Query;
 import org.hibernate.SessionFactory;

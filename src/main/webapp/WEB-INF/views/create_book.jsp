@@ -25,7 +25,7 @@
     <div id="logout"><a href="/">Logout</a></div>
 </div>
 <div id="main">
-    <form:form method="post" modelAttribute="book" action="createBookMethod">
+    <form:form method="post" modelAttribute="book">
         <h2>Заполните необходимые значения и нажмите кнопку</h2>
         <input type="submit" value="Создать"><br>
         <table>
@@ -54,10 +54,13 @@
             <tr>
                 <td>Автор(ы)</td>
                 <td>
-                    <select multiple="true">
-                        <option>Пункт 1</option>
-                        <option>Пункт 2</option>
-                    </select>
+                    <form:select path="authors" multiple="true">
+                        <c:if test="${!empty authorList}">
+                            <c:forEach items="${authorList}" var="author">
+                                <form:option value="${author.lastName} ${author.firstName}" />
+                            </c:forEach>
+                        </c:if>
+                    </form:select>
                 </td>
             </tr>
         </table>
